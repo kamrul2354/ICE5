@@ -20,6 +20,8 @@ class PizzaFactory
      * @param type the type of pizza to return
      * @return 
      */
+
+     // RETURNS A CONCRETE PIZZA OBJECT
     public Pizza createPizza(String type)
     {
         Pizza pizza = null;

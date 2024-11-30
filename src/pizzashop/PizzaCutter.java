@@ -15,12 +15,40 @@ package pizzashop;
  * creating this example:
  * Freeman, E.Freeman, E., Sierra, K., & Bates, B. (2004). Head First Design patterns. Sebastopol, CA: O'Reilly.
  * @author dancye
+ * /**
+ * A class that models a pizza cutter.
+ * Implements Singleton Design Pattern to ensure only one instance exists.
+ * Note: Public variable `numSlices` has been refactored for encapsulation (OCP).
+ * @author modified by KamrulHasan
  */
-public class PizzaCutter 
-{
-    public int numSlices = 0;// how many pieces to cut the pizza into
-    public PizzaCutter()
-    {
-        //intentionally left blank
+ 
+ public class PizzaCutter {
+
+    private static PizzaCutter instance = null; // Singleton instance
+    private int numSlices; // Number of slices (now private)
+
+    // Private constructor prevents instantiation
+    private PizzaCutter() {
+    }
+
+    // Public static method to get the Singleton instance
+    public static PizzaCutter getInstance() {
+        if (instance == null) {
+            instance = new PizzaCutter();
+        }
+        return instance;
+    }
+
+    // Getter and setter for numSlices to follow OCP
+    public void setNumSlices(int slices) {
+        if (slices > 0) {
+            this.numSlices = slices;
+        } else {
+            System.out.println("Invalid number of slices!");
+        }
+    }
+
+    public int getNumSlices() {
+        return numSlices;
     }
 }

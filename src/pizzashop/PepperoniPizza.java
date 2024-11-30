@@ -21,11 +21,11 @@ public class PepperoniPizza extends Pizza
         super.addTopping("cheese");
         super.addTopping("pepperoni");
     }
-    
-    public void bake(int temp)
-    {
-        super.bakeTemp = temp;
-        //do some baking here, code not implemented yet
-        //not necessary for the review
-    }
+    //// DON'T REPEAT YOURSELF
+    // public void bake(int temp)
+    // {
+    //     super.bakeTemp = temp;
+    //     //do some baking here, code not implemented yet
+    //     //not necessary for the review
+    // }
 }
